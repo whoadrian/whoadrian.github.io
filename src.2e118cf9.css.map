@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,UACE,QAAS,CACT,WACF,CACA,GACE,UAAW,CACX,WAAY,CACZ,aACF","file":"src.2e118cf9.css","sourceRoot":"..\\src","sourcesContent":["html, body {\r\n  margin: 0;\r\n  height: 100%;\r\n}\r\n#c {\r\n  width: 100%;\r\n  height: 100%;\r\n  display: block;\r\n}\r\n  "]}
