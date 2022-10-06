@@ -219,18 +219,21 @@
 							<header>
 								<h2>Get in touch!</h2>
 								<p>Send me a message and I'll answer as soon as possible!</p>
-								<p>Alternatively, drop me a mail at <a href="mailto:whoa.adrian@gmail.com">whoa.adrian@gmail.com</a></p>
 							</header>
 							<div class="row">
 								<div class="col-12">
-									<form method="post" action="mailto:whoa.adrian@gmail.com" method="POST">
+									<form method="POST" action="https://formspree.io/f/moqbwzkw">
 										<div class="row">
+											<div class="col-12 col-12-small">
+												<input type="text" name="email" id="email" placeholder="Email (optional)" />
+											</div>
 											<div class="col-12">
-												<textarea name="message" id="message" placeholder="Message"></textarea>
+												<textarea name="message" id="message" required placeholder="Message"></textarea>
 											</div>
 											<div class="col-6">
 												<ul class="actions">
 													<li><input type="submit" value="Send Message" /></li>
+													<li><input type="reset" value="Clear" class="alt" /></li>
 												</ul>
 											</div>
 										</div>
