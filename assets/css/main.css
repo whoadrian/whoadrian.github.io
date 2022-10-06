@@ -1895,7 +1895,7 @@ input, select, textarea {
 		padding-left: 0;
 		overflow: hidden;
 		cursor: default;
-		margin: 0 0 3.25em 0;
+		margin: 0 0 0 0;
 	}
 
 		ul.social li {
@@ -1910,11 +1910,11 @@ input, select, textarea {
 
 			ul.social li a {
 				display: inline-block;
-				width: 3em;
-				height: 3em;
+				width: 2.3em;
+				height: 2.3em;
 				text-align: center;
 				border-radius: 5px;
-				background: #888;
+				background: hsl(0, 100%, 54%);
 				-moz-transition: background-color .25s ease-in-out;
 				-webkit-transition: background-color .25s ease-in-out;
 				-ms-transition: background-color .25s ease-in-out;
@@ -1923,7 +1923,7 @@ input, select, textarea {
 
 				ul.social li a:before {
 					color: #fff;
-					font-size: 2em;
+					font-size: 1.5em;
 					line-height: 1.5em;
 				}
 
@@ -2083,7 +2083,7 @@ input, select, textarea {
 /* Nav */
 
 	#nav {
-		margin: 2.5em 0 0 0;
+		margin: 2em 0 0 0;
 	}
 
 		#nav > ul {
