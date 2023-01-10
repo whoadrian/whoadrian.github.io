@@ -6,6 +6,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src = "assets/js/jquery.min.js"></script>
+		<script> $(function(){ $("#header_include").load("header_include.html") });</script>
 	</head>
 	<body class="homepage is-preload">
 		
@@ -13,21 +15,7 @@
 
 			<!-- Header -->
 				<section id="header">
-
-						<!-- Logo -->
-						<img src="images/profile_pic.png" alt="" height="150px"/>
-						<h1>.whoadrian</h1>
-						<p>creative coder, audio fiddler, brush handler</p>
-
-						<!-- Social icons -->
-						<ul class="social">
-							<li><a class="icon brands fa-google" href="mailto: whoa.adrian@gmail.com"><span class="label">Facebook</span></a></li>
-							<li><a class="icon brands fa-facebook-f" href="https://www.facebook.com/whoa.adrian" target="_blank"><span class="label"></span></a></li>
-							<li><a class="icon brands fa-instagram" href="https://www.instagram.com/whoa.adrian/" target="_blank"><span class="label"></span></a></li>
-							<li><a class="icon brands fa-linkedin-in" href="https://www.linkedin.com/in/adrian-cristea-a9a20312a/" target="_blank"><span class="label"></span></a></li>
-							<li><a class="icon brands fa-github" href="https://github.com/whoadrian"><span class="label" target="_blank"></span></a></li>
-							<li><a class="icon brands fa-soundcloud" href="https://soundcloud.com/whoadrian/tracks" target="_blank"><span class="label"></span></a></li>
-						</ul>
+					<div id="header_include"></div>
 
 						<!-- Navigation Bar -->
 						<nav id="nav">
@@ -37,6 +25,9 @@
 								<li><a href="https://soundcloud.com/whoadrian/tracks" target="_blank">Music</a></li>
 								<li><a href="https://www.instagram.com/whoa.adrian/" target="_blank">Drawings</a></li>
 								<li><a href="#contact">Contact</a></li>
+								<li><a href="template-left-sidebar.html">TestLeft</a></li>
+								<li><a href="template-right-sidebar.html">TestRight</a></li>
+								<li><a href="template-no-sidebar.html">TestNo</a></li>
 							</ul>
 						</nav>
 
