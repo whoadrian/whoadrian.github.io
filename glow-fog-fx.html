@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>@whoadrian</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src = "assets/js/jquery.min.js"></script>
+		<script> $(function(){ $("#header_include").load("header_include.html") });</script>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<section id="header">
+				<div id="header_include"></div>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+					</ul>
+				</nav>
+			</section> 
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+
+						<!-- Content -->
+							<article class="box post">
+								<a href="#" class="image featured"><img src="images/glowfog/full.jpg" alt="" /></a>
+
+								<header>
+									<h2>Glow & Fog Post-Process FX</h2>
+									<p>In Unity's (now deprecated) deferred rendering pipeline</p>
+								</header>
+
+								<p>
+									During the development of Black the Fall, back in 2016, I was given an interesting challenge : to create a glow post-process effect
+									that only affects certain objects on the screen - like a specific light or object that's important for gameplay or atmosphere - leaving
+									everything else unaffected by the effect. 
+								</p>
+								<p>
+									As any professional developer, I turned to Google and, at least at that time, I could only find
+									effects that either apply to the whole screen, which blurs everything, or hacks into custom rendering pipelines, which Unity didn't support. 
+									The solution came from a forum post that didn't relate at first - Unity's GBuffers, which are the images that a deferred rendering pipeline render
+									into and use at the end to create the full image on screen, had an overlooked aspect : a free alpha channel with only a few bits that were not used.
+								</p>
+								<p>
+									These few unused bits that were just sitting there could be accessed from the camera's post-process chain of shaders and could be used as a mask 
+									for any effects. I only had to create a custom script & shader for the objects that need to glow, write into that unused channel an id for the respective 
+									object, and use that information in the glow effect to detect which pixels on the screen need to actually glow! The cool thing is that the mask creation didn't require any extra 
+									rendering steps.
+								</p>
+								<header>
+									<h3>The glow effect applied only to the lit stones, with a lens dirt texture on top</h3>
+								</header>
+								<header> <a href="#" class="image featured"><img src="images/glowfog/glow.jpg" alt="" /></a></header>
+								
+
+								<section>
+									<header>
+										<h3>Volumetric Fog</h3>
+									</header>
+									<p>
+										The glowing effect achievement couldn't just stop there. I had to see how far I could push the post-process chain of Unity. 
+										How about volumetric fog, that you can see through, walk through, and that animates pretty waves of clouds?
+									</p>
+									<p>
+										Turns out this was a bit more complicated, but not by far. Here's a step-by-step summary:
+									</p>
+									<p>
+										1) Create a cube with a custom shader that does ray-tracing for each pixel, through the cube. To simplify things, let's assume
+										that the cube cannot be rotated or scaled, but its dimensions can be changed during editing. <br>
+										2) The ray-tracing part uses the depth map to see if there's anything inside or in front of the cube. This is useful to know if 
+										we're actually going to render a fog colour to that pixel, and, if so, how foggy it is - if the fog is deep, it will cover everything behind it. <br>
+										3) Pro tip: To avoid calculating this for every pixel, do some random dithering (only choose random pixels, see blue noise patterns) and hide the noise 
+										with a temporal anti-aliasing post-process effect! The people from Playhead, who worked on the Inside game, have some cool TAA effects made public! <br>
+										4) Finally, play around with some Perlin Noise in the ray-tracing loop to create wavy, animated patterns aaand, there you have it!
+									</p>
+									<header>
+										<h3>The fog effect only</h3>
+									</header>
+									<header> <a href="#" class="image featured"><img src="images/glowfog/fog.jpg" alt="" /></a></header>
+
+								</section>
+								<section>
+									<header>
+										<h3>So in conclusion ...</h3>
+									</header>
+									<p>
+										Even the tiniest unused bit of information could be used to create interesting solutions for an art direction that keeps asking for more. 
+										And, of course, rendering and post-processing effects are fun to do when you get to sit back at the end and admire the results.
+									</p>
+								</section>
+							</article>
+
+					</div>
+				</section>
+
+			<!-- Footer -->
+			<section id="footer">
+				<div class="col-12">
+					<!-- Copyright -->
+						<div id="copyright">
+							<ul class="actions">
+								<li><a href="#header" class="button icon solid fa-arrow-circle-up">Back to Top</a></li>
+							</ul>
+						</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
