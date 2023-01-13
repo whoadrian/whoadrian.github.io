@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>@whoadrian</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src = "assets/js/jquery.min.js"></script>
+		<script> $(function(){ $("#header_include").load("header_include.html") });</script>
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<section id="header">
+				<div id="header_include"></div>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+					</ul>
+				</nav>
+			</section> 
+
+			<!-- Main -->
+			<section id="main">
+				<div class="container">
+
+					<!-- Content -->
+					<article class="box post">
+						<a href="#" class="image featured"><img src="images/fractalnature/1.png" alt="" /></a>
+						<header>
+							<h2>Procedural Terrain Generation</h2>
+							<p>Creating terrain-like surfaces and simulating naturally occurring erosion processes by wind, water and temperature </p>
+							<p>Project presented and published at the <a href="/documents/VS-Games 2015.pdf#page=94" target="_blank">International Conference on Virtual Worlds and Games for
+							Serious Applications: VS-Games 2015, in Skövde, Sweden; featured on IEEE</a></p>
+						</header>
+
+						<div class="row">
+							<div class="row">
+
+								<div class="col-6 col-12-small">
+									<section class="box">
+										<a href="#" class="image featured"><img src="images/fractalnature/7.png" alt="" /></a>
+											<h3>Terrain formation</h3>
+										<p>The initial shape of the terrain is created using fractal algorithms such as the Diamond-Square and Perlin noise, which can further be 
+											smoothed out using blurring algorithms like the Gaussian Blur, and low-pass filters to eliminate sharp peaks.</p>
+									</section>
+								</div>
+
+								<div class="col-6 col-12-small">
+									<section class="box">
+										<a href="#" class="image featured"><img src="images/fractalnature/3.png" alt="" /></a>
+											<h3>Thermal erosion</h3>
+										<p>Simulating changes in temperature that dry the earth, causing it to crumble and slide down hills. This naturally-occuring 
+											phenomenon creates sharp peaks on tops on mountains and sandy dune formations in valleys.</p>
+									</section>
+								</div>
+
+								<div class="col-6 col-12-small">
+									<section class="box">
+										<a href="#" class="image featured"><img src="images/fractalnature/4.png" alt="" /></a>
+											<h3>Hydraulic erosion</h3>
+										<p>Rain droplets are created at random points on the terrain map, and simulated using a realistic fluid simulation. Each cell 
+											has 'pipes' connecting it to neighbouring cells, that try to keep the pressure between the cells balanced, taking into account 
+											the force of gravity. This naturally leads to waves forming on the surface of the water mesh. 
+											Furthermore, each cell has the capacity to dissolve and pass on the terrain, which leads to rivers and valleys forming.</p>
+									</section>
+								</div>
+
+								<div class="col-6 col-12-small">
+									<section class="box">
+										<a href="#" class="image featured"><img src="images/fractalnature/6.png" alt="" /></a>
+											<h3>Wind forces over the hydraulic erosion</h3>
+										<p>A genuine implementation of wind forces over the water that erodes the ground is presented, which also helped actually publish 
+											a paper on this project. The wind force is driving the fluid simulation in arbitrary directions, while also taking into account 
+											the slopes of the terrain, so that the ones facing the wind directly are more strongly influenced.</p>
+									</section>
+								</div>
+
+							</div>
+						</div>
+
+					<!-- VIDEO -->
+					<iframe width="100%" height="315" src="https://www.youtube.com/embed/LhKSupKt9Bw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+					</article>
+				</div>
+			</section>
+
+			<!-- Footer -->
+			<section id="footer">
+				<div class="col-12">
+					<!-- Copyright -->
+						<div id="copyright">
+							<ul class="actions">
+								<li><a href="#header" class="button icon solid fa-arrow-circle-up">Back to Top</a></li>
+							</ul>
+						</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
